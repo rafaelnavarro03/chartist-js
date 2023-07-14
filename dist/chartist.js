@@ -759,8 +759,10 @@ var Chartist = {
     bounds.valueRange = bounds.high - bounds.low;
     bounds.oom = Chartist.orderOfMagnitude(bounds.valueRange);
     bounds.step = Math.pow(10, bounds.oom);
-    bounds.min = Math.floor(bounds.low / bounds.step) * bounds.step;
-    bounds.max = Math.ceil(bounds.high / bounds.step) * bounds.step;
+    //bounds.min = Math.floor(bounds.low / bounds.step) * bounds.step;
+    bounds.min = Math.floor(bounds.low);
+    bounds.max = Math.ceil(bounds.high);
+    //bounds.max = Math.ceil(bounds.high / bounds.step) * bounds.step;
     bounds.range = bounds.max - bounds.min;
     bounds.numberOfSteps = Math.round(bounds.range / bounds.step);
 
